@@ -18,7 +18,7 @@ To begin the enumeration process, I conducted a basic port scan using the follow
 
 > `nmap -sV -sC -O 10.67.165.26
 
-![[nmap.png]]
+![[images/nmap.png]]
 
  We will also use the gobuster tool on the website. 
  >`gobuster dir -u http://10.67.165.26/ -w wordlists/common.txt
