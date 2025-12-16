@@ -28,7 +28,9 @@ To begin the enumeration process, I conducted a basic port scan using the follow
 
 Now we go to the /img file shown by gobuster tool  and load the following image. 
 > `http://10.67.165.26/img`
+
 > `http://10.67.165.26/img/white_rabbit_1.jpg`
+
 > `wget http://10.67.165.26/img/white_rabbit_1.jpg`
 
 ![](images/2025-12-11_11-48.png)
