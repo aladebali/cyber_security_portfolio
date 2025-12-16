@@ -1,6 +1,6 @@
 #          TryHackMe__PassCode__writeup 
 
-Room Overview
+## Room Overview
 
 This room is classified as an easy-level challenge under the Blockchain / Web3 category.
 The objective is straightforward, focusing on interacting with a smart contract to retrieve a single passcode. 
@@ -11,7 +11,7 @@ The room is short, clear, and can be completed in a minimal amount of time.
 
 ---
 
-Execution Overview
+## Execution Overview
 
 To begin the challenge, we must first execute all the commands provided in the room exactly as given and in the correct order. These commands are required to initialize the environment, retrieve the necessary values, and interact correctly with the deployed smart contract. Executing them properly allows us to check the contract state and confirm whether the challenge has been solved.
 
@@ -32,7 +32,7 @@ To begin the challenge, we must first execute all the commands provided in the r
 
 
 
-⚠️ Important Note (Local Machine / VPN Users)
+### ⚠️ Important Note (Local Machine / VPN Users)
 
 If you are running this challenge on your own machine (instead of the TryHackMe AttackBox) or if you are connected via VPN, please note that the cast tool is not installed by default. The cast command is part of Foundry, which must be installed manually before executing the room commands.
 
@@ -87,7 +87,7 @@ Now if we go back to using the lest two commands that was given to us at the beg
 ![](images/test2.png)
 
 
- Now we got a true we can go to the website and get the flag by clicking on `get flag` button.
+ Now we got a true we can go to the website and get the flag by clicking on  **~~get flag~~** button.
 
 
 
@@ -96,4 +96,7 @@ Now if we go back to using the lest two commands that was given to us at the beg
 
 
 
+If this report helped you understand teh challenge or solve it more efficiently. I'm glad it was useful. 
+
+Think you for taking the time to read it.
 
