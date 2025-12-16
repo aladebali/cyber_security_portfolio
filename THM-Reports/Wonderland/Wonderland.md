@@ -9,7 +9,7 @@ I completed this machine from start to finish and documented each step clearly s
 The goal of this write-up is to demonstrate me methodology, explain why each step was taken, and highlight the key points that lead to gaining full access to the machine.
 You will also find a screenshot of the room details attached below. 
 
-![[2025-12-11_15-53.png]]
+![start](images/2025-12-11_15-53.png)
 
 
 ---
