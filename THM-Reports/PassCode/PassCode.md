@@ -16,6 +16,22 @@ Execution Overview
 To begin the challenge, we must first execute all the commands provided in the room exactly as given and in the correct order. These commands are required to initialize the environment, retrieve the necessary values, and interact correctly with the deployed smart contract. Executing them properly allows us to check the contract state and confirm whether the challenge has been solved.
 
 
+>`RPC_URL=http://10.66.180.95:8545`
+
+>`API_URL=http://10.66.180.95`
+
+>`PRIVATE_KEY=$(curl -s ${API_URL}/challenge | jq -r ".player_wallet.private_key")`
+
+>`CONTRACT_ADDRESS=$(curl -s ${API_URL}/challenge | jq -r ".contract_address")`
+
+>`PLAYER_ADDRESS=$(curl -s ${API_URL}/challenge | jq -r ".player_wallet.address")`
+
+>`is_solved=`cast call $CONTRACT_ADDRESS "isSolved()(bool)" --rpc-url ${RPC_URL}``
+
+>`echo "Check if is solved: $is_solved"`
+
+![](images/firstcommend.png)
+
 ---
 
 ⚠️ Important Note (Local Machine / VPN Users)
@@ -37,4 +53,5 @@ Once cast is successfully installed, you can proceed to run the room-provided co
 
 
 ---
+
 
