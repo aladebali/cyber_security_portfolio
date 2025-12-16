@@ -87,11 +87,12 @@ Now if we go back to using the lest two commands that was given to us at the beg
 ![](images/test2.png)
 
 
-Now we can go to the website and get the flag by clicking on teh `get flag` button.
+### Now we can go to the website and get the flag by clicking on teh `get flag` button.
 
 
 
 ![](images/flag.png)
+
 
 
 
