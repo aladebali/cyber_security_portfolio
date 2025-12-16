@@ -32,7 +32,7 @@ To begin the challenge, we must first execute all the commands provided in the r
 
 
 
-### ⚠️ Important Note (Local Machine / VPN Users)
+#### ⚠️ Important Note (Local Machine / VPN Users)
 
 If you are running this challenge on your own machine (instead of the TryHackMe AttackBox) or if you are connected via VPN, please note that the cast tool is not installed by default. The cast command is part of Foundry, which must be installed manually before executing the room commands.
 
@@ -99,6 +99,7 @@ Now if we go back to using the lest two commands that was given to us at the beg
 If this report helped you understand teh challenge or solve it more efficiently. I'm glad it was useful. 
 
 Think you for taking the time to read it.
+
 
 
 
