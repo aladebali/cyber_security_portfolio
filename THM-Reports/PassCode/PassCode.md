@@ -87,7 +87,7 @@ Now if we go back to using the lest two commands that was given to us at the beg
 ![](images/test2.png)
 
 
- Now we got a true we can go to the website and get the flag by clicking on  `**Get Flag**` button.
+ Now we got a true we can go to the website and get the flag by clicking on  **`Get Flag`** button.
 
 
 
@@ -99,6 +99,7 @@ Now if we go back to using the lest two commands that was given to us at the beg
 If this report helped you understand teh challenge or solve it more efficiently. I'm glad it was useful. 
 
 Think you for taking the time to read it.
+
 
 
 
