@@ -58,17 +58,24 @@ Once cast is successfully installed, you can proceed to run the room-provided co
 
 Here we receive an fales, and if we go to the website at http://<MACHINE_IP>
 
-![](web.png)
+![](images/web.png)
 
 
 we cannot obtain the flag.
 
 Now, as you can see in the script on the website, we need to obtain the hint by using the folowing command. 
 
+
 >`cast call $CONTRACT_ADDRESS "hint()(string)" --rpc-url ${RPC_URL}`
 
 
+
 ![](images/hint.png)
+
+
+
+
+
 
 
 
