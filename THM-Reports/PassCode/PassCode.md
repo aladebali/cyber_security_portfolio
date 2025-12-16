@@ -30,9 +30,7 @@ To begin the challenge, we must first execute all the commands provided in the r
 
 >`echo "Check if is solved: $is_solved"`
 
-![](images/firstcommend.png)
 
----
 
 ⚠️ Important Note (Local Machine / VPN Users)
 
@@ -40,18 +38,40 @@ If you are running this challenge on your own machine (instead of the TryHackMe 
 
 Foundry installation commands:
 
-cd ~
-curl -L https://foundry.paradigm.xyz | bash
-source ~/.zshenv   # or open a new terminal
-foundryup
+>`cd ~`
+
+>`curl -L https://foundry.paradigm.xyz | bash`
+
+>`source ~/.zshenv`   # or open a new terminal
+
+>`foundryup`
 
 After installation, verify that the tool is available:
 
-cast --version
+>`cast --version`
 
 Once cast is successfully installed, you can proceed to run the room-provided commands normally.
 
 
----
+![](images/firstcommend.png)
+
+
+Here we receive an fales, and if we go to the website at http://<MACHINE_IP>
+
+![](web.png)
+
+
+we cannot obtain the flag.
+
+Now, as you can see in the script on the website, we need to obtain the hint by using the folowing command. 
+
+>`cast call $CONTRACT_ADDRESS "hint()(string)" --rpc-url ${RPC_URL}`
+
+
+![](images/hint.png)
+
+
+
+
 
 
