@@ -26,7 +26,7 @@ To begin the challenge, we must first execute all the commands provided in the r
 
 >`PLAYER_ADDRESS=$(curl -s ${API_URL}/challenge | jq -r ".player_wallet.address")`
 
->`is_solved=`cast call $CONTRACT_ADDRESS "isSolved()(bool)" --rpc-url ${RPC_URL}``
+>``` is_solved=`cast call $CONTRACT_ADDRESS "isSolved()(bool)" --rpc-url ${RPC_URL}` ```
 
 >`echo "Check if is solved: $is_solved"`
 
@@ -87,11 +87,12 @@ Now if we go back to using the lest two commands that was given to us at the beg
 ![](images/test2.png)
 
 
-### Now we can go to the website and get the flag by clicking on teh `get flag` button.
+ Now we got a true we can go to the website and get the flag by clicking on `get flag` button.
 
 
 
 ![](images/flag.png)
+
 
 
 
