@@ -63,7 +63,7 @@ Here we receive an fales, and if we go to the website at http://<MACHINE_IP>
 
 we cannot obtain the flag.
 
-Now, as you can see in the script on the website, we need to obtain the hint by using the folowing command. 
+Now, as you can see in the script on the website, we need to obtain the hint by using the following command. 
 
 
 >`cast call $CONTRACT_ADDRESS "hint()(string)" --rpc-url ${RPC_URL}`
@@ -73,12 +73,25 @@ Now, as you can see in the script on the website, we need to obtain the hint by 
 ![](images/hint.png)
 
 
+Now that we have teh code, we can call unlock with the code. 
+through the following command.
+
+>`cast send $CONTRACT_ADDRESS "unlock(uint256)" 333 --private-key $PRIVATE_KEY --rpc-url $RPC_URL --legacy`
+
+
+![](images/unlock.png)
+
+
+Now if we go back to using the lest two commands that was given to us at the beginning of the room, we will get a different result.
+
+![](images/test2.png)
+
+
+Now we can go to the website and get the flag by clicking on teh `get flag` button.
 
 
 
-
-
-
+![](images/flag.png)
 
 
 
